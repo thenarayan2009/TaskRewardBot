@@ -11,15 +11,15 @@ from datetime import datetime, timedelta
 from typing import Dict, List, Any
 from flask import Flask
 
-BOT_TOKEN = "8262209791:AAG6Tpczt77ajbdPVnTrpCOyUOEOD0AHJHU"
-ADMIN_ID = 5367009004
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID", "0"))
 
 BOT_USERNAME = os.getenv("BOT_USERNAME", "Tasktoearnmoneybot")
 MINIMUM_WITHDRAWAL = 10
-REFERRAL_REWARD = 2
-REFERRAL_MILESTONE_COUNT = 5
+REFERRAL_REWARD = 0.5
+REFERRAL_MILESTONE_COUNT = 20
 REFERRAL_MILESTONE_REWARD = 10
-DEFAULT_WELCOME_BONUS = 5
+DEFAULT_WELCOME_BONUS = 1
 USERS_DATA_FILE = "data/users_data.json"
 BOT_DATA_FILE = "data/bot_data.json"
 BLOCKED_USERS_FILE = "data/blocked_users.json"
